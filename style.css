@@ -1,17 +1,17 @@
 :root {
-    --primary: #00f7ff;
-    --secondary: #8b00ff;
-    --accent: #ff00aa;
-    --bg-dark: #0a0a0a;
-    --bg-darker: #050505;
-    --text: #e0e0e0;
+    --primary: #ff6b35;
+    --secondary: #00a8e8;
+    --accent: #ff3864;
+    --bg-dark: #121212;
+    --bg-darker: #0a0a0a;
+    --text: #e8e8e8;
     --text-light: #ffffff;
-    --text-dark: #888888;
-    --grid-line: rgba(0, 247, 255, 0.1);
-    --highlight: rgba(0, 247, 255, 0.3);
-    --success: #00ff88;
-    --warning: #ffcc00;
-    --danger: #ff5555;
+    --text-dark: #a0a0a0;
+    --grid-line: rgba(255, 107, 53, 0.15);
+    --highlight: rgba(255, 107, 53, 0.25);
+    --success: #36d98f;
+    --warning: #ffca3a;
+    --danger: #ff5a5f;
 }
 
 * {
@@ -30,6 +30,8 @@ body {
     padding: 20px;
     font-family: 'Roboto', sans-serif;
     overflow-x: auto;
+    background-image: radial-gradient(circle at 15% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 25%),
+                      radial-gradient(circle at 85% 30%, rgba(0, 168, 232, 0.1) 0%, transparent 25%);
 }
 
 .cyber-container {
@@ -38,15 +40,15 @@ body {
     width: 95%;
     overflow: auto;
     border: 1px solid var(--primary);
-    box-shadow: 0 0 20px rgba(0, 247, 255, 0.3),
-                0 0 40px rgba(139, 0, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.3),
+                0 0 40px rgba(0, 168, 232, 0.2);
     background-color: var(--bg-darker);
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .cyber-header {
     background: linear-gradient(90deg, var(--bg-darker), var(--secondary), var(--bg-darker));
-    padding: 15px 20px;
+    padding: 20px;
     text-align: center;
     border-bottom: 1px solid var(--primary);
     position: relative;
@@ -54,10 +56,10 @@ body {
 }
 
 .cyber-header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: white;
+    color: var(--text-light);
     text-shadow: 0 0 10px var(--primary),
                  0 0 20px var(--primary);
     position: relative;
@@ -74,25 +76,26 @@ body {
     height: 100%;
     background: linear-gradient(90deg, 
                   transparent, 
-                  rgba(0, 247, 255, 0.1), 
+                  rgba(255, 107, 53, 0.15), 
                   transparent);
     animation: scanline 3s linear infinite;
 }
 
 .toolbar {
     display: flex;
-    padding: 15px;
+    padding: 20px;
     gap: 15px;
     align-items: center;
     border-bottom: 1px solid var(--grid-line);
     flex-wrap: wrap;
+    background: rgba(20, 20, 20, 0.5);
 }
 
 .cyber-button {
     background: linear-gradient(135deg, var(--secondary), var(--primary));
     border: none;
-    color: var(--bg-darker);
-    padding: 10px 20px;
+    color: var(--text-light);
+    padding: 12px 24px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -101,7 +104,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    border-radius: 3px;
+    border-radius: 4px;
     transition: all 0.3s;
     font-family: 'Orbitron', sans-serif;
 }
@@ -123,21 +126,23 @@ body {
 .search-box input {
     background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--primary);
-    padding: 10px 15px 10px 35px;
+    padding: 12px 15px 12px 40px;
     color: var(--text);
-    width: 250px;
-    border-radius: 3px;
-    font-size: 0.9rem;
+    width: 280px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
 }
 
 .search-box input:focus {
     outline: none;
     box-shadow: 0 0 10px var(--primary);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .search-icon {
     position: absolute;
-    left: 10px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--primary);
@@ -152,13 +157,13 @@ body {
 
 .spreadsheet th, .spreadsheet td {
     border: 1px solid var(--grid-line);
-    padding: 12px 15px;
+    padding: 14px 16px;
     text-align: left;
     position: relative;
 }
 
 .spreadsheet th {
-    background-color: rgba(0, 10, 20, 0.7);
+    background: linear-gradient(to bottom, rgba(30, 30, 30, 0.9), rgba(20, 20, 20, 0.9));
     color: var(--primary);
     font-weight: 600;
     text-transform: uppercase;
@@ -168,10 +173,11 @@ body {
     top: 0;
     z-index: 10;
     font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px rgba(255, 107, 53, 0.5);
 }
 
 .spreadsheet tr:nth-child(even) {
-    background-color: rgba(15, 15, 15, 0.5);
+    background-color: rgba(25, 25, 25, 0.5);
 }
 
 .spreadsheet tr:hover {
@@ -179,18 +185,18 @@ body {
 }
 
 .spreadsheet tr.selected {
-    background-color: rgba(0, 247, 255, 0.2);
+    background-color: rgba(255, 107, 53, 0.2);
     outline: 1px solid var(--primary);
 }
 
 .spreadsheet td:focus {
     outline: 2px solid var(--primary);
-    background-color: rgba(0, 10, 20, 0.9);
+    background-color: rgba(30, 30, 30, 0.9);
 }
 
 .corner-cell {
     background: linear-gradient(135deg, var(--secondary), var(--primary)) !important;
-    color: black !important;
+    color: var(--text-light) !important;
     font-weight: bold;
     text-align: center;
 }
@@ -199,13 +205,13 @@ body {
     color: var(--success);
     font-weight: bold;
     position: relative;
-    padding-left: 20px;
+    padding-left: 24px;
 }
 
 .status-high::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 5px;
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
@@ -219,13 +225,13 @@ body {
     color: var(--warning);
     font-weight: bold;
     position: relative;
-    padding-left: 20px;
+    padding-left: 24px;
 }
 
 .status-medium::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 5px;
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
@@ -239,13 +245,13 @@ body {
     color: var(--danger);
     font-weight: bold;
     position: relative;
-    padding-left: 20px;
+    padding-left: 24px;
 }
 
 .status-low::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 5px;
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
@@ -286,26 +292,27 @@ body {
 }
 
 .cyber-footer {
-    padding: 15px 20px;
+    padding: 20px;
     border-top: 1px solid var(--primary);
-    font-size: 0.8rem;
-    color: rgba(224, 224, 224, 0.7);
+    font-size: 0.9rem;
+    color: var(--text-dark);
     letter-spacing: 1px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    background: rgba(20, 20, 20, 0.7);
 }
 
 .footer-info {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 .info-item strong {
@@ -320,7 +327,7 @@ body {
     margin-top: 5px;
     color: var(--primary);
     font-family: 'Orbitron', sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 1.5px;
 }
 
@@ -350,17 +357,18 @@ body {
 
 /* Barra de rolagem personalizada */
 ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
+    height: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--bg-darker);
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--primary);
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -370,7 +378,7 @@ body {
 /* Responsividade */
 @media (max-width: 768px) {
     .cyber-header h1 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     
     .toolbar {
@@ -388,12 +396,12 @@ body {
     }
     
     .spreadsheet th, .spreadsheet td {
-        padding: 8px 10px;
+        padding: 10px 12px;
         font-size: 0.85rem;
     }
     
     .footer-info {
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
     }
 }
